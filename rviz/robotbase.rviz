@@ -28,7 +28,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -69,6 +69,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        base_top_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         caster_wheel_backward_chaster_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -104,11 +109,13 @@ Visualization Manager:
         All Enabled: true
         base_link:
           Value: true
+        base_top_link:
+          Value: true
         caster_wheel_backward_chaster_wheel_link:
           Value: true
         caster_wheel_forward_chaster_wheel_link:
           Value: true
-        laser:
+        odom:
           Value: true
         wheel_left_link:
           Value: true
@@ -121,17 +128,18 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          caster_wheel_backward_chaster_wheel_link:
-            {}
-          caster_wheel_forward_chaster_wheel_link:
-            {}
-          laser:
-            {}
-          wheel_left_link:
-            {}
-          wheel_right_link:
-            {}
+        odom:
+          base_link:
+            base_top_link:
+              {}
+            caster_wheel_backward_chaster_wheel_link:
+              {}
+            caster_wheel_forward_chaster_wheel_link:
+              {}
+            wheel_left_link:
+              {}
+            wheel_right_link:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -178,12 +186,12 @@ Visualization Manager:
           Color: 204; 51; 204
           Scale: 1
           Value: true
-        Value: true
+        Value: false
       Enabled: true
       Keep: 100
       Name: Odometry
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
+      Queue Size: 1
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -201,12 +209,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
-      Enabled: true
+      Enabled: false
       Name: Map
       Topic: /map
       Unreliable: false
       Use Timestamp: false
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -234,20 +242,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
-      Class: rviz/TopDownOrtho
+      Class: rviz/ThirdPersonFollower
+      Distance: 15.80669116973877
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Field of View: 0.7853981852531433
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 654.71533203125
+      Pitch: 0.6397973895072937
       Target Frame: <Fixed Frame>
-      X: -0.018879031762480736
-      Y: 0.002485785400494933
+      Yaw: 1.05539870262146
     Saved: ~
 Window Geometry:
   Displays:

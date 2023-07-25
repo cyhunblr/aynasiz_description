@@ -17,7 +17,7 @@
     <xacro:cylinder_inertial radius="0.03" length="0.0011" mass="0.04"/>
   </link>
   
-  <joint name="wheel_${yon}_base" type="continuous">
+  <joint name="wheel_${yon}_joint" type="continuous">
     <origin xyz="${xyz_konum}" rpy="${rpy_konum}"/>
     <parent link="base_link"/>
     <child link="wheel_${yon}_link"/>
@@ -47,7 +47,7 @@
     <xacro:sphere_inertial radius="0.0105" mass="0.04"/>
   </link>
   
-  <joint name="caster_wheel_${yon}_base" type="continuous">
+  <joint name="caster_wheel_${yon}_joint" type="continuous">
     <origin xyz="${xyz_konum}" rpy="${rpy_konum}"/>
     <parent link="base_link"/>
     <child link="caster_wheel_${yon}_link"/>
@@ -55,7 +55,7 @@
   </joint>
   
   <gazebo reference="caster_wheel_${yon}_link">
-    <material value="Gazebo/White"/>
+    <material value="Gazebo/black"/>
   </gazebo>  
 
   </xacro:macro>

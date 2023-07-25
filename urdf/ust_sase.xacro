@@ -15,6 +15,9 @@
         </geometry>
       </visual>
 
+    <xacro:cylinder_inertial radius="0.02" length="0.01" mass="0.2"/>
+    </link>
+
     <joint name="ust_sase_joint" type="fixed">
         <origin xyz="${xyz_konum}" rpy="${rpy_konum}"/>
         <parent link="base_link"/>
@@ -22,10 +25,9 @@
         <axis xyz="0 0 0"/>
     </joint>
 
-    <xacro:cylinder_inertial radius="0.02" length="0.01" mass="0.2"/>
-    </link>
     <gazebo reference="base_link">
       <material value="Gazebo/Blue"/>
     </gazebo>
+    
   </xacro:macro>
 </robot>
